@@ -1,34 +1,32 @@
 AllCops:
   NewCops: enable
   Exclude:
+    - "db/**/*"
+    - "bin/*" 
+    - "config/**/*"
     - "Guardfile"
     - "Rakefile"
     - "node_modules/**/*"
-    - "config/"
-    - "db/"
-  Exclude:
-    - 'student.rb'
-    - 'teacher.rb'
-    - 'config/initializers/content_security_policy.rb'
-    - 'config/initializers/inflections.rb'
-    - 'config/initializers/permissions_policy.rb'
-    - 'config/routes.rb'
-    - 'db/seeds.rb'
 
   DisplayCopNames: true
 
 Layout/LineLength:
   Max: 120
 Metrics/MethodLength:
+  Include:
+    - "app/controllers/*"
+    - "app/models/*"
   Max: 20
 Metrics/AbcSize:
+  Include:
+    - "app/controllers/*"
+    - "app/models/*"
   Max: 50
 Metrics/ClassLength:
   Max: 150
 Metrics/BlockLength:
-  IgnoredMethods: ['describe']
+  AllowedMethods: ['describe']
   Max: 30
-
 
 Style/Documentation:
   Enabled: false
