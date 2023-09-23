@@ -4,9 +4,7 @@ class Post < ApplicationRecord
 
 	def update_post_counter
 		num = User.find_by(id: author_id).posts_counter.to_i
-		puts num
 		User.find_by(id: author_id).update(posts_counter: num + 1)
-		
 	end
 
 	def recent_comments
