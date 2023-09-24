@@ -31,8 +31,6 @@ RSpec.describe Post do
   describe '#update_post_counter' do
     it 'increments posts_counter of the author' do
       post = Post.new(author: user, title: 'love', text: 'Hello word')
-
-
       expect do
         post.update_post_counter
       end.to change { user.reload.posts_counter }.by(1)
