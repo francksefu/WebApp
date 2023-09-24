@@ -16,19 +16,21 @@ RSpec.describe User do
   end
 
   describe '#recent_post' do
-    it 'returns up to 3 recent post' do
-      user = User.create(name: 'franck', photo: 'https//', bio: 'bio')
-      user1 = User.create(name: 'franck', photo: 'https//', bio: 'bio')
+    it 'returns up to 3 recent posts' do
+      usera = User.create(name: 'Tomy', photo: 'mok', bio: 'bio', posts_counter: 10)
       posts = []
 
       # Create some posts associated with the user
-      6.times do |i|
-        posts << Post.create(author: user, title: 'love', text: "Post #{i}")
+      5.times do |i|
+        posts << Post.create(author: usera, title: "Post #{i}", comments_counter: 10, likes_counter: 10)
       end
 
-      recent_post = user1.recent_post
+      recent_posts = usera.recent_post
 
-      expect(recent_post.length).to eq(0)
+      expect(recent_posts.length).to eq(3)
+      expect(recent_posts[0].title).to eq(posts[4].title)
+      expect(recent_posts[1].title).to eq(posts[3].title)
+      expect(recent_posts[2].title).to eq(posts[2].title)
     end
   end
 end

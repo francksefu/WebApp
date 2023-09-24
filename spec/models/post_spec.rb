@@ -44,7 +44,6 @@ RSpec.describe Post do
 
       # Create some comments associated with the post
       10.times do |i|
-        # create(:comment, post: post, text: "Comment #{i}")
         comments << Comment.create(post:, author: user, text: "Comment #{i}")
       end
 
