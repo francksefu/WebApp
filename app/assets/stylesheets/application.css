@@ -18,6 +18,7 @@
   justify-content: space-around;
   padding-top: 3px;
 }
+
 .user {
   border: 1px solid black;
   margin-top: 5px;
@@ -84,7 +85,8 @@
   white-space: nowrap;
 }
 
-.post > p, .ici {
+.post > p,
+.ici {
   padding-right: 5px;
   display: flex;
   justify-content: space-between;
@@ -96,4 +98,3 @@
   padding: 10px;
   margin: 5px 10px;
 }
- 
