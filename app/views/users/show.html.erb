@@ -1,8 +1,13 @@
-<h1>Show page</h1>
-<h1><%= @user.name %></h1>
+
+<div class="show-user">
+<div class="container"><div class="cadre"></div><div class="user"><h2><%= @user.name  %></h2> <p><span></span><span>Number of posts : <span><%= @user.posts_counter %></span></span></p></div></div>
+
+<p class='bio'><%= @user.bio %></p>
 <br>
-<p><%= @user.bio %></p>
+<% @post.each_with_index do |posts, idx|%>
+    <div class='post'><span class='title'><%= link_to 'Post #', user_posts_path(@user) %><%= idx + 1 %></span>
+    <br><%= posts.text %></div>
+<% end %>
 <br>
-<%= @user.posts_counter %>
-<br>
-<%= link_to 'Go to Posts', users_path %>
+</div>
+

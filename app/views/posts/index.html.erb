@@ -1,2 +1,40 @@
-<h1> All Posts </h1>
-<p>Content for post here</p>
+<div class="show-user">
+<div class="container"><div class="cadre"></div><div class="user"><h2><%= @user.name  %></h2> <p><span></span><span>Number of posts : <span><%= @user.posts_counter %></span></span></p></div></div>
+
+<br>
+<% @post.each_with_index do |posts, idx|%>
+    <div class='post'>
+        <span class='title'>
+            <%= link_to "Post ##{idx+1}", user_post_path(@user, posts) %>
+        </span><br>
+        <%= posts.text %>
+        <p>
+            <span></span>
+            <span>comments : <span><% if (posts.comments_counter) %>
+            <%= posts.comments_counter %>
+            <% else %>
+            <%= 0 %>
+            <% end %>
+            , likes : <span><% if (posts.likes_counter) %>
+            <%= posts.likes_counter %>
+            <% else %>
+            <%= 0 %>
+            <% end %></span></span>
+            
+        </p>
+    </div>
+    <div class='comment'>
+    <% @comment.each do |comments|%>
+        <% if(comments.post_id == posts.id)%>
+            <% @user_check.each do |user_c|%>
+                <% if(comments.user_id == user_c.id)%>
+                    <%= user_c.name %>:<%= comments.text %><br>
+                <% end %>
+            <% end %>
+        <% end %>
+        
+    <% end %></div>
+<% end %>
+
+<br>
+</div> 

@@ -1,6 +1,6 @@
 <h1> User </h1>
 <ul>
   <% @users.each do |user| %>
-    <li><%= link_to user.name, user_path(user) %> <span><%= user.posts_counter %></span></li>
+    <li class="container"><div class="cadre"></div><div class="user"><h2><%= link_to user.name, user_path(user) %></h2> <p><span></span><span>Number of posts : <span><%= user.posts_counter %></span></span></p></div></li>
   <% end %>
 </ul>
