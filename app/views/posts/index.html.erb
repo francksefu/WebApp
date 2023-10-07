@@ -24,14 +24,14 @@
         </p>
     </div>
     <div class='comment'>
-    <% @comment_recent.each_with_index do |comments, idx|%>
-        <% if(comments.post_id == posts.id)%>
+    <% posts.recent_comments.each_with_index do |comments, idx|%>
+        
             <% @user_check.each do |user_c|%>
                 <% if(comments.user_id == user_c.id)%>
                     <%= user_c.name %>:<%= comments.text %><br>
                 <% end %>
             <% end %>
-        <% end %>
+        
         
     <% end %></div>
 <% end %>
