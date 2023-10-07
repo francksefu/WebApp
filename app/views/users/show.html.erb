@@ -5,6 +5,7 @@
 <p class='bio'><%= @user.bio %></p>
 <br>
 <% @post.each_with_index do |posts, idx|%>
+    <% break if idx == 3 %>
     <div class='post'><span class='title'><%= link_to 'Post #', user_posts_path(@user) %><%= idx + 1 %></span>
     <br><%= posts.text %></div>
 <% end %>

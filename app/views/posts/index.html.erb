@@ -24,7 +24,8 @@
         </p>
     </div>
     <div class='comment'>
-    <% @comment.each do |comments|%>
+    <% @comment.each_with_index do |comments, idx|%>
+        <% break if idx == 5 %>
         <% if(comments.post_id == posts.id)%>
             <% @user_check.each do |user_c|%>
                 <% if(comments.user_id == user_c.id)%>

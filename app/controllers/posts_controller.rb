@@ -3,14 +3,14 @@ class PostsController < ApplicationController
 
   def index
     @post = Post.where(author_id: params[:user_id])
-    @comment = Comment.all
+    @comment = Comment.all.order(created_at: :desc)
     @user = User.find_by(id: params[:user_id])
     @user_check = User.all
   end
 
   def show
     @post = Post.find_by(id: params[:id])
-    @comment = Comment.all
+    @comment = Comment.all.order(created_at: :desc)
     @user = User.find_by(id: params[:user_id])
     @user_check = User.all
   end
