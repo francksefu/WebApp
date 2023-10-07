@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @post = Post.where(author_id: params[:user_id])
-    @comment = Comment.all.order(created_at: :desc)
+    @comment_recent = Comment.all.order(created_at: :desc).limit(5)
     @user = User.find_by(id: params[:user_id])
     @user_check = User.all
   end
