@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources :users do
     resources :posts  # Define the route for the user's posts
   end
-
+  resources :posts, only: [:new, :create]
+  resources :comments, only: [:new, :create]
 end
