@@ -10,6 +10,101 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
+ *= require_tree.
  *= require_self
  */
+.container {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 3px;
+}
+
+.user {
+  border: 1px solid black;
+  margin-top: 5px;
+  height: 70px;
+  width: 70%;
+}
+
+.cadre {
+  margin-top: 5px;
+  border: 1px solid black;
+  height: 70px;
+  width: 70px;
+}
+
+.user > p {
+  padding-right: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user > h2 {
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+.bio {
+  border: 1px solid black;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.show-user {
+  margin: 10px;
+}
+
+.show-user > .container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 3px;
+}
+
+.title {
+  margin: 10px 5px;
+}
+
+.post {
+  border: 1px solid black;
+  padding: 5px;
+  margin-top: 5px;
+  height: 60px;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.comment {
+  border: 1px solid black;
+  padding: 5px;
+  margin-top: 5px;
+  height: 50px;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.post > p,
+.ici {
+  padding-right: 5px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.show-post {
+  border: 1px solid black;
+  padding: 10px;
+  margin: 5px 10px;
+}
+
+#big-post {
+  display: none;
+}
+
+#see_all {
+  padding: 8px;
+  width: 30%;
+  margin: 10px 35%;
+}

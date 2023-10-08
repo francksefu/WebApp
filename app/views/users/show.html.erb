@@ -1,7 +1,36 @@
-<h1><%= @user.name %></h1>
+
+<div class="show-user">
+<div class="container"><div class="cadre"></div><div class="user"><h2><%= @user.name  %></h2> <p><span></span><span>Number of posts : <span><%= @user.posts_counter %></span></span></p></div></div>
+
+<p class='bio'><%= @user.bio %></p>
 <br>
-<p><%= @user.bio %></p>
+<div id="small-post">
+<% @user.recent_post.each_with_index do |posts, idx|%>
+    <div class='post'><span class='title'><%= link_to 'Post #', user_posts_path(@user, posts) %><%= idx + 1 %></span>
+    <br><%= posts.text %></div>
+<% end %>
+<button id="see_all"> See all </button>
+</div>
+
+
+<div id="big-post">
+<% @user.all_post.each_with_index do |posts, idx|%>
+    <div class='post'><span class='title'><%= link_to 'Post #', user_posts_path(@user, posts) %><%= idx + 1 %></span>
+    <br><%= posts.text %></div>
+<% end %>
+</div>
 <br>
-<%= @user.posts_counter %>
-<br>
-<%= link_to 'Go to Posts', users_path %>
+</div>
+<script>
+let button = document.querySelector('#see_all');
+let big_post = document.querySelector('#big-post');
+let small_post = document.querySelector('#small-post');
+
+button.addEventListener('click', () => {
+    small_post.style.display = 'none';
+    big_post.style.display = 'block';
+});
+</script>
+
+
+

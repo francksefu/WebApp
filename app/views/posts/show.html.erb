@@ -1,2 +1,40 @@
-<h1> Single Posts </h1>
-<p>Content for single post here</p>
+<div class='show-post'>
+    <span class='title'>
+        Post by <%= @user.name %>
+    </span><br>
+        <p class="ici">
+            <span></span>
+            <span>comments : <span><% if (@post.comments_counter) %>
+            <%= @post.comments_counter %>
+            <% else %>
+            <%= 0 %>
+            <% end %>
+            , likes : <span><% if (@post.likes_counter) %>
+            <%= @post.likes_counter %>
+            <%= button_to "Like", user_post_likes_path(@user, @post), method: :post, class: "button", remote: true %>
+            <% else %>
+            <%= 0 %>
+            <% end %></span></span>
+            
+        </p>
+
+        <div>
+            <%= @post.text %>
+        </div>
+</div>
+
+<div class='show-post'>
+    <div >
+        <% @comment.each do |comments|%>
+            <% if(comments.post_id == @post.id)%>
+                <% @user_check.each do |user_c|%>
+                    <% if(comments.user_id == user_c.id)%>
+                        <%= user_c.name %>:<%= comments.text %><br>
+                    <% end %>
+                <% end %>
+            <% end %>
+    
+        <% end %>
+    </div>
+
+</div>
