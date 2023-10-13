@@ -25,15 +25,11 @@ RSpec.feature 'Post Show Page', type: :feature do
   scenario 'Displays the post show page correctly' do
     # Verify that the post title contains the user's name
     expect(page).to have_content(@user.name)
-
     # Verify that the comments and likes counters are displayed
     expect(page).to have_content(@post.comments_counter)
     expect(page).to have_content(@post.likes_counter)
     expect(page).to have_content(@post.text)
     expect(page).to have_content(@post.title)
-
-    # Verify the presence of the post content
-
 
     # Verify the presence of comments
     @comments.each_with_index do |comment, _idx|
