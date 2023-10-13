@@ -8,7 +8,7 @@ class User < ApplicationRecord
   end
 
   def all_post
-    Post.where(author_id: id).order(created_at: :desc)
+    Post.includes(:comments).where(author_id: id).order(created_at: :desc)
   end
 
   validates :name, presence: true
