@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   # Create action - Handle the creation of a new post
 
   def index
-    @post = Post.where(author_id: params[:user_id])
+    @post = Post.includes(:comments).where(author_id: params[:user_id])
     @user = User.find_by(id: params[:user_id])
     @user_check = User.all
   end
@@ -24,7 +24,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find_by(id: params[:id])
+    @post = Post.includes(:comments).find_by(id: params[:id])
     @comment = Comment.all.order(created_at: :desc)
     @user = User.find_by(id: params[:user_id])
     @user_check = User.all
