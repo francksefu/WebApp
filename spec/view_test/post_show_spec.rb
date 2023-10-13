@@ -38,7 +38,6 @@ RSpec.feature 'Post Show Page', type: :feature do
     # Verify the presence of comments
     @comments.each_with_index do |comment, _idx|
       expect(page).to have_content(comment.text)
-      name = ''
       User.all.each do |us|
         expect(page).to have_content(us.name) if comment.user_id == us.id
       end
