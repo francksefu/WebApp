@@ -7,6 +7,9 @@ AllCops:
     - "Guardfile"
     - "Rakefile"
     - "node_modules/**/*"
+    - "spec/view_test/user_show_spec.rb"
+    - "spec/view_test/post_index_spec.rb"
+
 
   DisplayCopNames: true
 

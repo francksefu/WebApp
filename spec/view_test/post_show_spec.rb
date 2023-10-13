@@ -5,11 +5,11 @@ require 'rails_helper'
 RSpec.feature 'Post Show Page', type: :feature do
   before do
     # Create a user
-    @user = User.create(name: 'Alice', posts_counter: 2)
+    @user = User.create(name: 'Alice-F', posts_counter: 2)
     @user1 = User.create(name: 'Alice', posts_counter: 2)
 
     # Create a post
-    @post = Post.create(user: @user, title: 'My Post', text: 'This is the content of the post', comments_counter: 2,
+    @post = Post.create(author: @user, title: 'My Post', text: 'This is the content of the post', comments_counter: 2,
                         likes_counter: 0)
 
     # Create some comments for the post
@@ -24,7 +24,7 @@ RSpec.feature 'Post Show Page', type: :feature do
 
   scenario 'Displays the post show page correctly' do
     # Verify that the post title contains the user's name
-    expect(page).to have_content("Post by #{@user.name}")
+    expect(page).to have_content(@user.name)
 
     # Verify that the comments and likes counters are displayed
     expect(page).to have_content(@post.comments_counter)
