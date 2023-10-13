@@ -81,6 +81,11 @@ Comming soon ...
 - LinkedIn: [francksefu](https://www.linkedin.com/in/franck-sefu/)
 
 
+👤 **Henok Mekonnen**
+
+- GitHub: [@githubhandle](https://github.com/henask12)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/henokmekonnen1)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
