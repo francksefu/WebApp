@@ -1,14 +1,14 @@
 require 'rails_helper'
 
-RSpec.feature "User index page", type: :feature do
+RSpec.feature 'User index page', type: :feature do
   before do
-    #Create User
+    # Create User
     @user1 = User.create(name: 'Franck', photo: 'pic', bio: 'Tio', posts_counter: 0)
     User.create(name: 'Gilson', photo: 'pic', bio: 'Tio', posts_counter: 0)
     User.create(name: 'Emma', photo: 'pic', bio: 'Tio', posts_counter: 0)
   end
 
-  scenario "Display all usernames on the index page" do
+  scenario 'Display all usernames on the index page' do
     visit users_path
 
     User.all.each do |user|
@@ -16,7 +16,7 @@ RSpec.feature "User index page", type: :feature do
     end
   end
 
-  scenario "Display all picture(mock) on the index page" do
+  scenario 'Display all picture(mock) on the index page' do
     visit users_path
 
     User.all.each do |user|
@@ -24,7 +24,7 @@ RSpec.feature "User index page", type: :feature do
     end
   end
 
-  scenario "Display all number of post on the index page" do
+  scenario 'Display all number of post on the index page' do
     visit users_path
 
     User.all.each do |user|
