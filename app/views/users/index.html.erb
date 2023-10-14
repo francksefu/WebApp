@@ -2,7 +2,7 @@
 <ul>
   <% @users.each do |user| %>
     <li class="container">
-        <div class="cadre"></div>
+        <div class="cadre"><%= user.photo %></div>
         <div class="user">
             <h2><%= link_to user.name, user_path(user) %></h2>
             <p>

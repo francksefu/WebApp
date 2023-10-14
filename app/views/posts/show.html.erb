@@ -1,6 +1,6 @@
 <div class='show-post'>
     <span class='title'>
-        Post by <%= @user.name %>
+    <%= @post.title %> by <%= @user.name %>
     </span><br>
         <p class="ici">
             <span></span>
@@ -11,7 +11,7 @@
             <% end %>
             , likes : <span><% if (@post.likes_counter) %>
             <%= @post.likes_counter %>
-            <%= button_to "Like", user_post_likes_path(@user, @post), method: :post, class: "button", remote: true %>
+            
             <% else %>
             <%= 0 %>
             <% end %></span></span>
