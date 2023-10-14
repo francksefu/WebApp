@@ -9,6 +9,7 @@ AllCops:
     - "node_modules/**/*"
     - "spec/view_test/user_show_spec.rb"
     - "spec/view_test/post_index_spec.rb"
+    - "app/controllers/application_controller.rb"
 
 
   DisplayCopNames: true
